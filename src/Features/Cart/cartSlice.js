@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const initialState = {
 	cartItems: [],
 	showCart: false,
-	amount: 1,
+	amount: 0,
 	total: 0,
 	isLoading: true,
 };
@@ -24,9 +24,11 @@ const cartSlice = createSlice({
 			state.cartItems = [...state.cartItems, data];
 		},
 		toggleProductCount: (state, { payload }) => {
-			const product = Data.find((item) => item.link === payload.name);
-
-			console.log(payload);
+			state.cartItems = payload;
+		},
+		clearCart: (state, { payload }) => {
+			state.cartItems = [];
+			state.amount = 0;
 		},
 		calculateAmount: (state, { payload }) => {
 			if (state.cartItems.length > 0) {
@@ -36,12 +38,18 @@ const cartSlice = createSlice({
 				state.amount = productAmount.reduce((acc, cur) => acc + cur);
 				console.log(state.amount);
 			} else {
+				state.amount = 0;
 			}
 			// state.amount = totalAmount;
 			// console.log(state.amount);
 		},
 	},
 });
-export const { toggleCart, addtoCart, toggleProductCount, calculateAmount } =
-	cartSlice.actions;
+export const {
+	toggleCart,
+	addtoCart,
+	toggleProductCount,
+	calculateAmount,
+	clearCart,
+} = cartSlice.actions;
 export default cartSlice.reducer;

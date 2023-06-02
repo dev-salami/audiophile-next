@@ -45,8 +45,8 @@ function Product() {
 	// 	dispatch(toggleProductCount(data));
 	// };
 	const decreaseBtn = () => {
-		if (Count > 0) {
-			setCount(Count - 1);
+		if (Count > 1) {
+			setCount((prev) => prev - 1);
 		} else {
 			setCount(Count);
 		}
@@ -79,7 +79,7 @@ function Product() {
 							width={500}
 							height={500}
 							// src={`/../../assets/product-zx9-speaker/tablet/image-gallery-3.jpg`}
-							src="/../../assets/product-zx9-speaker/tablet/image-gallery-3.jpg"
+							src={productpageData.images[0]}
 							alt="product"
 						/>
 					</div>
