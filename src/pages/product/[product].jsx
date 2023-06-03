@@ -36,14 +36,7 @@ function Product() {
 	const toggleCountData = (productName, actionType) => {
 		return { name: productName, type: actionType };
 	};
-	// const decreaseBtn = () => {
-	// 	const data = toggleCountData(product, "decrease");
-	// 	dispatch(toggleProductCount(data));
-	// };
-	// const increaseBtn = () => {
-	// 	const data = toggleCountData(product, "increase");
-	// 	dispatch(toggleProductCount(data));
-	// };
+
 	const decreaseBtn = () => {
 		if (Count > 1) {
 			setCount((prev) => prev - 1);
@@ -79,7 +72,7 @@ function Product() {
 							width={500}
 							height={500}
 							// src={`/../../assets/product-zx9-speaker/tablet/image-gallery-3.jpg`}
-							src={productpageData.images[0]}
+							src={productpageData?.images[0]}
 							alt="product"
 						/>
 					</div>
