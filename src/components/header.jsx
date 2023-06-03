@@ -50,7 +50,7 @@ function Header() {
 							<div className="pt-4  ">
 								<Link
 									className="bg-[#d87d4a] hover:bg-[#fbaf85] text-white px-4 py-2"
-									href="/product/xx99-mark-ii-headphones">
+									href="/product/xx99-mark-two-headphones">
 									SEE PRODUCT
 								</Link>
 							</div>

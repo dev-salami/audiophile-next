@@ -22,7 +22,7 @@ function Headphones() {
 				imagetre={require("../assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg")}
 				name="XX99 MARK I HEADPHONES"
 				detail="As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go."
-				link="xx99-mark-i-headphones"
+				link="xx99-mark-one-headphones"
 			/>
 			<Productitem
 				imageone={require("../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg")}
@@ -30,7 +30,7 @@ function Headphones() {
 				imagetre={require("../assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg")}
 				name="XX99 MARK II HEADPHONES"
 				detail="The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound."
-				link="xx99-mark-ii-headphones"
+				link="xx99-mark-two-headphones"
 			/>
 			<Productlink />
 			<Advert />

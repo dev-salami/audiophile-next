@@ -33,9 +33,6 @@ function Product() {
 
 	const cartData = { name: product, count: Count };
 	const alreadyExist = cartItems.find((item) => item.link === product);
-	const toggleCountData = (productName, actionType) => {
-		return { name: productName, type: actionType };
-	};
 
 	const decreaseBtn = () => {
 		if (Count > 1) {
@@ -58,8 +55,6 @@ function Product() {
 			// setTimeout(console.log(cartItems), 4000);
 		}
 	};
-	const test = "yx1-earphones";
-	const imagePath = `/../../assets/product-${product}/tablet/image-gallery-3.jpg`;
 
 	return (
 		<div>
