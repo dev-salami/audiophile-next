@@ -8,6 +8,10 @@ const initialState = {
 	total: 0,
 	isLoading: true,
 };
+const saveInCart = () => {
+	console.log("Please enter");
+};
+saveInCart();
 // useEffect((console.log(initialState)
 // ),[initialState])
 const cartSlice = createSlice({

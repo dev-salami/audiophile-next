@@ -117,15 +117,11 @@ function Cart() {
 					<p className="text-gray-500">TOTAL</p>
 					<span>${amount}</span>
 				</div>
-				{showCart ? (
-					<button className="bg-orange-500 text-white hover:bg-orange-400 duration-500 p-4 w-full ">
-						CHECKOUT
-					</button>
-				) : (
-					<button className="bg-green-500 text-white hover:bg-green-400 duration-500 p-4 w-full ">
-						CHECKOUT
-					</button>
-				)}
+				<button
+					disabled={cartItems.length === 0}
+					className=" disabled:bg-orange-300 bg-[#d87d4a] text-white  duration-500 p-4 w-full font-medium ">
+					CHECKOUT
+				</button>
 			</div>
 		</section>
 	);

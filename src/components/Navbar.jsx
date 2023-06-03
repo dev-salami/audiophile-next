@@ -29,7 +29,7 @@ function Navbar() {
 	const isActive = (pathname) => router.pathname === pathname;
 
 	return (
-		<section className="h-full w-full sticky top-0 z-50">
+		<section className="h-full w-full   z-50 ">
 			<Cart />
 			<main className="text-white   bg-black  w-full  py-8 px-4 h-[100px]  flex flex-row justify-around border-b-[1px]  ">
 				<span className="font-bold text-2xl flex items-center ">
@@ -49,7 +49,7 @@ function Navbar() {
 									transition={{ duration: 5 }}
 									style={{ borderRadius: 9999 }}
 									layoutId="active-pill"
-									className=" bg-orange-400 absolute inset-0"
+									className=" bg-[#d87d4a] absolute inset-0"
 								/>
 							)}
 							<span className="relative z-10">{item.name}</span>
@@ -57,7 +57,7 @@ function Navbar() {
 					))}
 				</div>
 				<button
-					className="transition ease-in-out duration-700 relative hover:text-orange-400"
+					className="transition ease-in-out duration-700 relative hover:text-[#d87d4a]"
 					onClick={toggleCartFn}>
 					<BsCart size={40} />
 					<span className="absolute -top-1 -right-1 font-bold h-5 w-5 bg-white flex items-center justify-center text-black rounded-full text-center">
@@ -67,13 +67,14 @@ function Navbar() {
 
 				<button
 					onClick={handleClick}
-					className="bg-orange sm:hidden focus:outline-none hover:text-orange-400 transition ease-in-out duration-700 flex items-center  z-[999]">
+					className="bg-orange sm:hidden focus:outline-none hover:text-[#d87d4a] transition ease-in-out duration-700 flex items-center  z-[999]">
 					<span className="w-8 h-8   ">
 						{/* {setOpen  <Menu /> : <Close />} */}
 						{!Open ? <FaBars size={30} /> : <FaTimes size={30} />}
 					</span>
 				</button>
 			</main>
+
 			<aside>
 				<div
 					onClick={() => setOpen(false)}
@@ -94,7 +95,7 @@ function Navbar() {
 									key={item.name}
 									href={item.link}
 									className={`transition ease-in-out duration-700   px-3 py-1 ${
-										isActive(item.link) ? "bg-orange-400 text-white" : ""
+										isActive(item.link) ? "bg-[#d87d4a] text-white" : ""
 									}`}>
 									{item.name}
 								</Link>

@@ -114,7 +114,7 @@ function Product() {
 							</button>
 							<button
 								onClick={addToCartFunction}
-								className="outline-none hover:bg-[#d87d4a] bg-[#fbaf85] text-white ml-8 py-2 px-4 text-md">
+								className="outline-none bg-[#d87d4a] hover:bg-[#fbaf85] text-white ml-8 py-2 px-4 text-md">
 								ADD TO CART
 							</button>
 						</div>

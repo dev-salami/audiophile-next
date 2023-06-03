@@ -12,22 +12,22 @@ function Footer() {
 							<div className="md:space-y-0 text-sm space-y-4  mt-3 flex-col text-center font-semibold md:text-lg flex md:flex-row md:space-x-4 ">
 								<Link
 									href="/"
-									className="transition ease-in-out duration-700 hover:text-orange-400">
+									className="transition ease-in-out duration-700 hover:text-[#d87d4a]">
 									HOME
 								</Link>
 								<Link
 									href="/headphones"
-									className="transition ease-in-out duration-700 hover:text-orange-400">
+									className="transition ease-in-out duration-700 hover:text-[#d87d4a]">
 									HEADPHONES
 								</Link>
 								<Link
 									href="/speakers"
-									className="transition ease-in-out duration-700 hover:text-orange-400">
+									className="transition ease-in-out duration-700 hover:text-[#d87d4a]">
 									SPEAKERS
 								</Link>
 								<Link
 									href="/earphones"
-									className="transition ease-in-out duration-700 hover:text-orange-400">
+									className="transition ease-in-out duration-700 hover:text-[#d87d4a]">
 									EARPHONES
 								</Link>
 							</div>
