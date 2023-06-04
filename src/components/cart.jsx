@@ -1,5 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from "next/router";
+
 import {
 	calculateAmount,
 	toggleCart,
@@ -7,9 +9,11 @@ import {
 	clearCart,
 } from "../Features/Cart/cartSlice";
 import Image from "next/image";
+import Link from "next/link";
 
 function Cart() {
 	const dispatch = useDispatch();
+	const router = useRouter();
 
 	const showCart = useSelector((state) => state.cart.showCart);
 	const cartItems = useSelector((state) => state.cart.cartItems);
@@ -119,7 +123,8 @@ function Cart() {
 				</div>
 				<button
 					disabled={cartItems.length === 0}
-					className=" disabled:bg-orange-300 bg-[#d87d4a] text-white  duration-500 p-4 w-full font-medium ">
+					onClick={() => router.push("/checkout")}
+					className=" disabled:bg-orange-300  bg-[#d87d4a] text-white  duration-500 p-4 w-full font-medium ">
 					CHECKOUT
 				</button>
 			</div>

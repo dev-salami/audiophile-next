@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const initialState = {
 	cartItems: [],
 	showCart: false,
-	amount: 0,
+	amount: 5670,
 	total: 0,
 	isLoading: true,
 };
