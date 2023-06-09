@@ -46,7 +46,7 @@ function Navbar() {
 							}`}>
 							{isActive(item.link) && (
 								<motion.div
-									transition={{ duration: 5 }}
+									transition={{ duration: 0.5 }}
 									style={{ borderRadius: 9999 }}
 									layoutId="active-pill"
 									className=" bg-[#d87d4a] absolute inset-0"

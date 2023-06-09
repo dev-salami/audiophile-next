@@ -119,12 +119,37 @@ function Product() {
 						</div>
 					</div>
 				</div>
-				<div className="h-screen gap-8 w-full flex">
+				<div className="h-fit gap-8 w-full flex">
 					<div className="h-full w-2/5 gap-8 flex flex-col">
-						<div className="bg-gray-600 w-full  h-1/2"></div>
-						<div className="bg-orange-600 w-full h-1/2"></div>
+						<div className=" w-full flex items-end   h-1/2">
+							<Image
+								className="rounded-xl"
+								width={500}
+								height={500}
+								src={productpageData?.images[2]}
+								alt="product"
+							/>
+						</div>
+						<div className=" flex items-start  w-full h-1/2">
+							<Image
+								className="rounded-xl"
+								width={500}
+								height={500}
+								src={productpageData?.images[3]}
+								alt="product"
+							/>
+						</div>
 					</div>
-					<div className="bg-blue-600 w-3/5  h-full"></div>
+					<div className=" w-3/5 flex items-center  h-full">
+						<Image
+							className="rounded-xl object-cover"
+							// style={{ objectFit: "center", width: "100%" }}
+							width={1000}
+							height={1000}
+							src={productpageData?.images[1]}
+							alt="product"
+						/>
+					</div>
 				</div>
 			</section>{" "}
 			<Ymalc />
