@@ -12,6 +12,13 @@ function Checkout() {
 	const [Zip, setZip] = useState();
 	const [City, setCity] = useState("");
 	const [Country, setCountry] = useState("");
+	// const [Valid, setValid] = useState(false);
+	// if (!Name || !email || !Number || !Address || !Zip || !City || !Country) {
+	// 	setValid(false);
+	// } else {
+	// 	setValid(true);
+	// }
+
 	const Convamount = useSelector((state) => state.cart.amount);
 	const amount = Math.ceil(Convamount * 700 * 1.05);
 
@@ -49,8 +56,8 @@ function Checkout() {
 	return (
 		<>
 			<Navbar />
-			<div className="flex md:flex-row flex-col mt-8 justify-around gap-8 px-6 container mx-auto">
-				<form className="md:w-3/5 flex flex-col gap-8 p-8 rounded-xl border-2">
+			<div className="flex lg:flex-row flex-col mt-8 justify-around gap-8 px-6 container mx-auto">
+				<form className="lg:w-3/5 flex flex-col gap-8 p-8 rounded-xl border-2">
 					<h1 className="text-3xl font-semibold p-4 uppercase">checkout</h1>
 					<div>
 						<h1
@@ -180,7 +187,7 @@ function Checkout() {
 						<div></div>
 					</div>
 				</form>
-				<div className="md:w-1/3 p-4 rounded-xl border-2  ">
+				<div className="lg:w-2/5 p-4 rounded-xl border-2  ">
 					<h2 className="text-2xl font-semibold p-4">SUMMARY</h2>
 					<div></div>
 					<div className="sm:text-base text-sm flex flex-col gap-4 ">
@@ -213,6 +220,9 @@ function Checkout() {
 							className="bg-[#d87d4a] mt-4 font-semibold text-white w-full py-1"
 							{...componentProps}
 						/>
+						{/* <button className="uppercase bg-[#d87d4a] mt-4 font-semibold text-white w-full py-1">
+							Continue and Pay
+						</button> */}
 					</div>
 				</div>
 			</div>

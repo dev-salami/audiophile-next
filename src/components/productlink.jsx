@@ -45,7 +45,7 @@ function Productlink() {
 								<h3>SPEAKER</h3>
 								<span className="flex justify-evenly pb-4">
 									<Link
-										href="/speaker"
+										href="/speakers"
 										className="flex flex-row space-x-2 text-base text-gray-600">
 										<span>shop</span>
 										<Image

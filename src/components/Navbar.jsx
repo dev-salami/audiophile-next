@@ -8,8 +8,13 @@ import { BsCart } from "react-icons/bs";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
+import { useSession, signIn, signOut } from "next-auth/react";
+import Image from "next/image";
 
 function Navbar() {
+	const { data } = useSession();
+	console.log(data);
+
 	const numberOfCartItems = useSelector((state) => state.cart.cartItems.length);
 	const dispatch = useDispatch();
 	const router = useRouter();
@@ -18,6 +23,7 @@ function Navbar() {
 		dispatch(toggleCart("hello"));
 	};
 	const [Open, setOpen] = useState(false);
+	const [authStatus, setauthStatus] = useState(false);
 
 	const handleClick = () => setOpen(!Open);
 	const tabs = [
@@ -31,7 +37,7 @@ function Navbar() {
 	return (
 		<section className="h-full w-full   z-50 ">
 			<Cart />
-			<main className="text-white   bg-black  w-full  py-8 px-4 h-[100px]  flex flex-row justify-around border-b-[1px]  ">
+			<main className="text-white items-center   bg-black  w-full  py-8 px-4 h-[100px]  flex flex-row justify-around border-b-[1px]  ">
 				<span className="font-bold text-2xl flex items-center ">
 					Audiophile
 				</span>
@@ -41,9 +47,9 @@ function Navbar() {
 						<Link
 							key={item.name}
 							href={item.link}
-							className={`transition ease-in-out duration-700  relative px-3 py-1 ${
-								isActive(item.link) ? "" : ""
-							}`}>
+							className="transition ease-in-out duration-700  relative px-3 py-1 
+								
+							">
 							{isActive(item.link) && (
 								<motion.div
 									transition={{ duration: 0.5 }}
@@ -55,24 +61,49 @@ function Navbar() {
 							<span className="relative z-10">{item.name}</span>
 						</Link>
 					))}
-				</div>
-				<button
-					className="transition ease-in-out duration-700 relative hover:text-[#d87d4a]"
-					onClick={toggleCartFn}>
-					<BsCart size={40} />
-					<span className="absolute -top-1 -right-1 font-bold h-5 w-5 bg-white flex items-center justify-center text-black rounded-full text-center">
-						{numberOfCartItems}
-					</span>
-				</button>
 
-				<button
-					onClick={handleClick}
-					className="bg-orange sm:hidden focus:outline-none hover:text-[#d87d4a] transition ease-in-out duration-700 flex items-center  z-[999]">
-					<span className="w-8 h-8   ">
-						{/* {setOpen  <Menu /> : <Close />} */}
-						{!Open ? <FaBars size={30} /> : <FaTimes size={30} />}
-					</span>
-				</button>
+					{data ? (
+						<button
+							onClick={() => signOut()}
+							className="  font-bold  transition  ease-in-out duration-700   px-2 py-0.5 ">
+							LOGOUT
+						</button>
+					) : (
+						<button
+							onClick={() => signIn()}
+							className="transition ease-in-out duration-700  relative px-3 py-1 ">
+							LOGIN
+						</button>
+					)}
+				</div>
+				<div className="flex gap-4 h-fit ">
+					<button
+						className="transition ease-in-out duration-700 relative hover:text-[#d87d4a]"
+						onClick={toggleCartFn}>
+						<BsCart size={40} />
+						<span className="absolute -top-1 -right-1 font-bold h-5 w-5 bg-white flex items-center justify-center text-black rounded-full text-center">
+							{numberOfCartItems}
+						</span>
+					</button>
+					{data && (
+						<Image
+							width={40}
+							height={40}
+							alt="profile-image"
+							className="rounded-full cursor-pointer "
+							src={data?.user?.image}
+						/>
+					)}
+
+					<button
+						onClick={handleClick}
+						className="bg-orange sm:hidden focus:outline-none hover:text-[#d87d4a] transition ease-in-out duration-700 flex items-center  z-[999]">
+						<span className="w-8 h-8   ">
+							{/* {setOpen  <Menu /> : <Close />} */}
+							{!Open ? <FaBars size={30} /> : <FaTimes size={30} />}
+						</span>
+					</button>
+				</div>
 			</main>
 
 			<aside>

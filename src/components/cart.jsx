@@ -43,7 +43,6 @@ function Cart() {
 			});
 			return test;
 		};
-		console.log(data());
 
 		dispatch(toggleProductCount(data()));
 		dispatch(calculateAmount());
@@ -123,7 +122,10 @@ function Cart() {
 				</div>
 				<button
 					disabled={cartItems.length === 0}
-					onClick={() => router.push("/checkout")}
+					onClick={() => {
+						router.push("/checkout");
+						toggleCartFn();
+					}}
 					className=" disabled:bg-orange-300  bg-[#d87d4a] text-white  duration-500 p-4 w-full font-medium ">
 					CHECKOUT
 				</button>
