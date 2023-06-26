@@ -8,18 +8,16 @@ function Header() {
 		<>
 			<section className="bg-[#191919] py-4  ">
 				<div className="lg:flex container  hidden  mx-auto justify-around">
-					<div className="md:max-w-[30%] max-w-[60%] flex flex-col mt-24  space-y-4 ">
-						<h1 className="text-gray-400 font-semibold text-center  md:text-left">
-							NEW PRODUCT
-						</h1>
-						<h3 className="pb-2 text-center text-white md:text-left text-5xl font-semibold">
+					<div className="md:max-w-[30%] max-w-[60%] flex flex-col mt-24  space-y-4 text-center  md:text-left ">
+						<h1 className="text-gray-400 font-semibold ">NEW PRODUCT</h1>
+						<h3 className="pb-2  text-white  text-5xl font-semibold">
 							XX99 MARK II HEADPHONES
 						</h3>
-						<p className="text-gray-400 text-xl text-center  md:text-left ">
+						<p className="text-gray-400 text-xl  ">
 							Experience natural, lifelike audio and exceptional build quality
 							made for the passionate music enthusiast.
 						</p>
-						<div className="pt-4  md:text-left">
+						<div className="pt-4 w-full  ">
 							<Link
 								className="bg-[#d87d4a] hover:bg-[#fbaf85] text-white px-4 py-2"
 								href="/product/xx99-mark-two-headphones">
@@ -47,7 +45,7 @@ function Header() {
 								Experience natural, lifelike audio and exceptional build quality
 								made for the passionate music enthusiast.
 							</p>
-							<div className="pt-4  ">
+							<div className="pt-4 text-center  ">
 								<Link
 									className="bg-[#d87d4a] hover:bg-[#fbaf85] text-white px-4 py-2"
 									href="/product/xx99-mark-two-headphones">

@@ -33,8 +33,8 @@ function headertwo() {
 				</div>
 			</div>
 
-			<div className=" bgn max-w-[1000px] mx-auto h-[320px]  justify-center  flex flex-col pl-12 py-6 rounded-3xl  md:space-y-3  md:my-12 ">
-				<h3 className="pb-2  text-black md:text-left text-3xl relative top-">
+			<div className=" bgn max-w-[1000px] mx-auto  sm:h-[320px]  justify-center  flex flex-col pl-12 py-6 rounded-3xl  md:space-y-3  my-12 ">
+				<h3 className="pb-2  text-black md:text-left text-xl md:text-3xl relative top-">
 					ZX7 SPEAKER
 				</h3>
 

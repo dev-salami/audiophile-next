@@ -71,7 +71,7 @@ function Product() {
 							alt="product"
 						/>
 					</div>
-					<div className="lg:max-w-[30%] max-w-[60%] flex flex-col  space-y-2 ">
+					<div className="lg:max-w-[30%] flex flex-col  space-y-2 ">
 						<h1 className="text-[#D87D4A] text-center  lg:text-left">
 							NEW PRODUCT
 						</h1>
@@ -82,7 +82,7 @@ function Product() {
 							{productpageData?.details}
 						</p>
 
-						<div className="flex flex-row items-center pt-8 space-x-8">
+						<div className="flex flex-row items-center justify-center pt-8 space-x-8">
 							<button
 								onClick={increaseBtn}
 								className="text-2xl outline-none">
@@ -96,7 +96,7 @@ function Product() {
 							</button>
 							<button
 								onClick={addToCartFunction}
-								className="outline-none bg-[#d87d4a] hover:bg-[#fbaf85] text-white ml-8 py-2 px-4 text-md">
+								className="outline-none bg-[#d87d4a] hover:bg-[#fbaf85] text-white ml-8 py-2 px-4 text-sm ">
 								ADD TO CART
 							</button>
 						</div>

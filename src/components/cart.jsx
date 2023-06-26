@@ -10,6 +10,7 @@ import {
 } from "../Features/Cart/cartSlice";
 import Image from "next/image";
 import Link from "next/link";
+import { FaTimes } from "react-icons/fa";
 
 function Cart() {
 	const dispatch = useDispatch();
@@ -63,7 +64,7 @@ function Cart() {
 					!showCart && "opacity-0 scale-0"
 				}`}></div>
 			<div
-				className={`bg-white w-[30rem] max-h-[60vh] text-sm rounded-xl overflow-y-auto p-4 float-right mr-20 mt-20 duration-500 ${
+				className={`bg-white md:w-[30rem] md:h-fit text-sm rounded-xl overflow-y-auto p-4 fixed inset-0 md:top-1/2 md:-translate-y-1/2  md:left-1/2 md:-translate-x-1/2 duration-500 ${
 					showCart ? "opacity-100 scale-100" : "opacity-0 scale-0"
 				} `}>
 				<div className="font-semibold flex justify-between p-4">
@@ -79,7 +80,7 @@ function Cart() {
 					<button
 						onClick={toggleCartFn}
 						className="text-gray-500 hover:text-gray-700 duration-500">
-						Close
+						<FaTimes size={30} />
 					</button>
 				</div>
 				<>

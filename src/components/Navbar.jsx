@@ -37,12 +37,12 @@ function Navbar() {
 	return (
 		<section className="h-full w-full   z-50 ">
 			<Cart />
-			<main className="text-white items-center   bg-black  w-full  py-8 px-4 h-[100px]  flex flex-row justify-around border-b-[1px]  ">
+			<main className="text-white items-center   bg-black  w-full  py-8 px-8 md:px-4 h-[100px]  flex flex-row justify-between border-b-[1px]  ">
 				<span className="font-bold text-2xl flex items-center ">
 					Audiophile
 				</span>
 
-				<div className="items-center  text-sm mt-3 sm:flex flex-row font-semibold space-x-4 hidden">
+				<div className="items-center  text-sm mt-3 md:flex flex-row font-semibold space-x-4 hidden">
 					{tabs.map((item, index) => (
 						<Link
 							key={item.name}
@@ -76,7 +76,7 @@ function Navbar() {
 						</button>
 					)}
 				</div>
-				<div className="flex gap-4 h-fit ">
+				<div className="flex gap-6 h-fit ">
 					<button
 						className="transition ease-in-out duration-700 relative hover:text-[#d87d4a]"
 						onClick={toggleCartFn}>
@@ -97,7 +97,7 @@ function Navbar() {
 
 					<button
 						onClick={handleClick}
-						className="bg-orange sm:hidden focus:outline-none hover:text-[#d87d4a] transition ease-in-out duration-700 flex items-center  z-[999]">
+						className="bg-orange md:hidden focus:outline-none hover:text-[#d87d4a] transition ease-in-out duration-700 flex items-center  z-[999]">
 						<span className="w-8 h-8   ">
 							{/* {setOpen  <Menu /> : <Close />} */}
 							{!Open ? <FaBars size={30} /> : <FaTimes size={30} />}
@@ -109,12 +109,12 @@ function Navbar() {
 			<aside>
 				<div
 					onClick={() => setOpen(false)}
-					className={` duration-500 sm:hidden ${
+					className={` duration-500 md:hidden ${
 						Open
 							? "bg-black/60 fixed !top-0 z-[1000] inset-0 opacity-100"
 							: "opacity-0"
 					}`}></div>
-				<div className="sm:hidden ">
+				<div className="md:hidden ">
 					<div
 						className={`z-[1000] duration-1000 p-10 bg-black    fixed top-0 left-0 right-1/3 bottom-0 ${
 							Open ? "bg-white " : " bg-white -translate-x-full "
@@ -131,6 +131,19 @@ function Navbar() {
 									{item.name}
 								</Link>
 							))}
+							{data ? (
+								<button
+									onClick={() => signOut()}
+									className="  font-bold  transition  ease-in-out duration-700   px-2 py-0.5 ">
+									LOGOUT
+								</button>
+							) : (
+								<button
+									onClick={() => signIn()}
+									className="transition ease-in-out duration-700  relative px-3 py-1 ">
+									LOGIN
+								</button>
+							)}
 						</div>
 					</div>
 				</div>

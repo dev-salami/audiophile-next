@@ -24,7 +24,7 @@ function productitem(props) {
 						alt="product"
 					/>
 				</div>
-				<div className="lg:max-w-[30%] max-w-[60%] flex flex-col  space-y-1 ">
+				<div className="lg:max-w-[30%] px-4 sm:max-w-[60%] flex flex-col  space-y-1 ">
 					<h1 className="text-[#D87D4A] text-center  lg:text-left">
 						NEW PRODUCT
 					</h1>
