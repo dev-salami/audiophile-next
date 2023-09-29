@@ -38,14 +38,7 @@ function Product() {
 						</Link>
 					</button>
 					<div className="flex flex-row items-center pt-8 space-x-8">
-						<button
-							// onClick={() => {
-							// 	dispatch(increase());
-							// 	console.log("salami");
-							// }}
-							className="text-2xl outline-none">
-							+
-						</button>
+						<button className="text-2xl outline-none">+</button>
 						<p className="text-xl">{amount}</p>
 						<button className="text-2xl outline-none">-</button>
 						<button className="outline-none hover:bg-[#d87d4a] bg-[#fbaf85] text-white ml-8 py-2 px-4 text-md">

@@ -3,7 +3,6 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import Cart from "./cart";
 import { toggleCart } from "../Features/Cart/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
-// import { Link, Link } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -13,7 +12,6 @@ import Image from "next/image";
 
 function Navbar() {
 	const { data } = useSession();
-	console.log(data);
 
 	const numberOfCartItems = useSelector((state) => state.cart.cartItems.length);
 	const dispatch = useDispatch();

@@ -47,12 +47,9 @@ function Product() {
 		} else setCount(Count);
 	};
 	const addToCartFunction = () => {
-		if (alreadyExist) {
-			console.log("Product already in the Cart");
-		} else {
+		if (!alreadyExist) {
 			dispatch(addtoCart(cartData));
 			dispatch(calculateAmount());
-			// setTimeout(console.log(cartItems), 4000);
 		}
 	};
 

@@ -11,10 +11,12 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
+import { signIn, useSession } from "next-auth/react";
 
 function Cart() {
 	const dispatch = useDispatch();
 	const router = useRouter();
+	const { data } = useSession();
 
 	const showCart = useSelector((state) => state.cart.showCart);
 	const cartItems = useSelector((state) => state.cart.cartItems);
@@ -121,15 +123,23 @@ function Cart() {
 					<p className="text-gray-500">TOTAL</p>
 					<span>${amount}</span>
 				</div>
-				<button
-					disabled={cartItems.length === 0}
-					onClick={() => {
-						router.push("/checkout");
-						toggleCartFn();
-					}}
-					className=" disabled:bg-orange-300  bg-[#d87d4a] text-white  duration-500 p-4 w-full font-medium ">
-					CHECKOUT
-				</button>
+				{data ? (
+					<button
+						disabled={cartItems.length === 0}
+						onClick={() => {
+							router.push("/checkout");
+							toggleCartFn();
+						}}
+						className=" disabled:bg-orange-300  bg-[#d87d4a] text-white  duration-500 p-4 w-full font-medium ">
+						CHECKOUT
+					</button>
+				) : (
+					<button
+						onClick={() => signIn()}
+						className="bg-[#d87d4a] text-white  duration-500 p-4 w-full font-medium">
+						LOGIN
+					</button>
+				)}
 			</div>
 		</section>
 	);

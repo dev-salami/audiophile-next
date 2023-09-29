@@ -20,7 +20,6 @@ const cartSlice = createSlice({
 	reducers: {
 		toggleCart: (state, { payload }) => {
 			state.showCart = !state.showCart;
-			// console.log(payload);
 		},
 		addtoCart: (state, { payload }) => {
 			const productAdded = Data.find((item) => item.link === payload.name);
@@ -44,8 +43,6 @@ const cartSlice = createSlice({
 			} else {
 				state.amount = 0;
 			}
-			// state.amount = totalAmount;
-			// console.log(state.amount);
 		},
 	},
 });
