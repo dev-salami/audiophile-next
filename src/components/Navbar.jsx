@@ -7,11 +7,14 @@ import { BsCart } from "react-icons/bs";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { UserButton, useAuth } from "@clerk/nextjs";
+
+// import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 
 function Navbar() {
-	const { data } = useSession();
+	const { userId } = useAuth();
+	// const userId = false;
 
 	const numberOfCartItems = useSelector((state) => state.cart.cartItems.length);
 	const dispatch = useDispatch();
@@ -21,7 +24,6 @@ function Navbar() {
 		dispatch(toggleCart("hello"));
 	};
 	const [Open, setOpen] = useState(false);
-	const [authStatus, setauthStatus] = useState(false);
 
 	const handleClick = () => setOpen(!Open);
 	const tabs = [
@@ -60,18 +62,19 @@ function Navbar() {
 						</Link>
 					))}
 
-					{data ? (
-						<button
-							onClick={() => signOut()}
-							className="  font-bold  transition  ease-in-out duration-700   px-2 py-0.5 ">
-							LOGOUT
-						</button>
-					) : (
-						<button
-							onClick={() => signIn()}
-							className="transition ease-in-out duration-700  relative px-3 py-1 ">
-							LOGIN
-						</button>
+					{!userId && (
+						<>
+							<Link
+								href="sign-in"
+								className="text-gray-300 hover:text-white mr-4">
+								Sign In
+							</Link>
+							<Link
+								href="sign-up"
+								className="text-gray-300 hover:text-white mr-4">
+								Sign Up
+							</Link>
+						</>
 					)}
 				</div>
 				<div className="flex gap-6 h-fit ">
@@ -83,15 +86,7 @@ function Navbar() {
 							{numberOfCartItems}
 						</span>
 					</button>
-					{data && (
-						<Image
-							width={40}
-							height={40}
-							alt="profile-image"
-							className="rounded-full cursor-pointer "
-							src={data?.user?.image}
-						/>
-					)}
+					<UserButton afterSignOutUrl="/" />
 
 					<button
 						onClick={handleClick}
@@ -129,18 +124,19 @@ function Navbar() {
 									{item.name}
 								</Link>
 							))}
-							{data ? (
-								<button
-									onClick={() => signOut()}
-									className="  font-bold  transition  ease-in-out duration-700   px-2 py-0.5 ">
-									LOGOUT
-								</button>
-							) : (
-								<button
-									onClick={() => signIn()}
-									className="transition ease-in-out duration-700  relative px-3 py-1 ">
-									LOGIN
-								</button>
+							{!userId && (
+								<>
+									<Link
+										href="sign-in"
+										className="text-gray-300 hover:text-white mr-4">
+										Sign In
+									</Link>
+									<Link
+										href="sign-up"
+										className="text-gray-300 hover:text-white mr-4">
+										Sign Up
+									</Link>
+								</>
 							)}
 						</div>
 					</div>
