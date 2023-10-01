@@ -2,7 +2,7 @@ import { UserProfile } from "@clerk/nextjs";
 
 const ProfilePage = () => {
 	return (
-		<section className=" flex justify-center items-center">
+		<section className="mt-10 flex justify-center items-center">
 			<UserProfile />
 		</section>
 	);
